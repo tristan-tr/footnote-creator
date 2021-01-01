@@ -1,10 +1,35 @@
-<h1>CKV Footnotes</h1>
-<br/>
-<form>
-	<label for="website">Website:</label><br/>
-	<input type="text" id="website" name="website"><br/>
-	<label for="author">Auteur:</label><br/>
-	<input type="text" id="author" name="author"><br/>
-	<label for="year">Jaartal:</label><br/>
-	<input type="text" id="year" name="year"><br/>
-</form>
+<html>
+	<head>
+		<script type="text/javascript">
+			function generateFootnote(form){
+				console.log(form);
+				currentDate = new Date(Date.now()).toLocaleString('en-GB');
+				console.log(currentDate);
+				form.output.value = "test";
+			}
+		</script>
+	</head>
+
+	<body>
+		<h1>CKV Footnotes</h1>
+		<br/>
+		<form>
+			<label for="website">Website:</label><br/>
+			<input type="text" id="website" name="website"><br/>
+			
+			<label for="title">Titel:</label><br/>
+			<input type="text" id="title" name="title"><br/>
+			
+			<label for="author">Initialen:</label><br/>
+			<input type="text" id="author" name="author"><br/>
+			
+			<label for="year">Jaartal:</label><br/>
+			<input type="text" id="year" name="year"><br/>
+			
+			<input type="button" id="button" name="button" value="Get Footnote" onClick="generateFootnote(this.form)"><br/>
+			
+			<label for="output">Output:</label><br/>
+			<input type="text" id="output" name="output"><br/>
+		</form>
+	</body>
+</html>
