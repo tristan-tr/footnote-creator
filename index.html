@@ -2,9 +2,17 @@
 	<head>
 		<script type="text/javascript">
 			function generateFootnote(form){
-				console.log(form);
-				currentDate = new Date(Date.now()).toLocaleString('en-GB');
+				currentDate = new Date(Date.now()).toLocaleString('en-GB').split(',')[0]; // Get the current date in dd-mm-yyyy format
 				console.log(currentDate);
+				website = form.website.value;
+				console.log(website);
+				title = form.title.value;
+				console.log(title);
+				author = form.title.author === "" ? "N.B." : form.title.author;
+				console.log(author);
+				year = form.title.year === "" ? currentDate.split('-')[2] : form.title.year;
+				console.log(year);
+				
 				form.output.value = "test";
 			}
 		</script>
