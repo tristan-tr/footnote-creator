@@ -8,7 +8,7 @@
 				author = form.author.value === "" ? "N.B." : form.author.value;
 				year = form.year.value === "" ? currentDate.split('/')[2] : form.year.value;
 				
-				form.output.value = `${author}, ($(year)). $(title) $(website) geraadpleegd op $(currentDate).`
+				form.output.value = author + ", (" + year + " ). " + title + " " + website + " geraadpleegd op " + currentDate + "."
 			}
 		</script>
 	</head>
