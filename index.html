@@ -2,18 +2,13 @@
 	<head>
 		<script type="text/javascript">
 			function generateFootnote(form){
-				currentDate = new Date(Date.now()).toLocaleString('en-GB').split(',')[0]; // Get the current date in dd-mm-yyyy format
-				console.log(currentDate);
+				currentDate = new Date(Date.now()).toLocaleString('en-GB').split(',')[0]; // Get the current date in dd/mm/yyyy format
 				website = form.website.value;
-				console.log(website);
 				title = form.title.value;
-				console.log(title);
 				author = form.author.value === "" ? "N.B." : form.author.value;
-				console.log(author);
-				year = form.year.value === "" ? currentDate.split('-')[2] : form.year.value;
-				console.log(year);
+				year = form.year.value === "" ? currentDate.split('/')[2] : form.year.value;
 				
-				form.output.value = "test";
+				form.output.value = `${author}, ($(year)). $(title) $(website) geraadpleegd op $(currentDate).`
 			}
 		</script>
 	</head>
